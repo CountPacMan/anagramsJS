@@ -12,7 +12,24 @@ function findAnagrams(input_word, input_array) {
 
 
 jQuery(document).ready(function() {
-  $("#title-case").submit(function(event) {
+  $("#word").focus();
+
+  $("#anagram").submit(function(event) {
+
+    var word = $("#word").val();
+    var list_of_words = $("#array").val().split(" ");
+
+    var matches = findAnagrams(word, list_of_words);
+
+    if (matches.length === 0)
+    {
+      $("#nomatches").show()
+      $("#result").hide();
+    } else {
+      $("#matches").text(matches.join(", "));
+      $("#result").show();
+      $("#nomatches").hide();
+    }
 
 
 
