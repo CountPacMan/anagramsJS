@@ -15,4 +15,12 @@ describe('findAnagrams', function() {
     expect(findAnagrams("acres", ["cares", "biscuit", "races", "scare", "not"])).to.deep.equal(["cares", "races", "scare"]);
   });
 
+  it("matches multiple letter anagrams with eachother regardless of case using partial matches", function() {
+    expect(findAnagrams("belo", ["elbow", "biscuit"])).to.deep.equal(["elbow"]);
+  });
+
+  it("matches multiple letter anagrams with eachother regardless of case using partial matches and does not return reverse partial matches", function() {
+    expect(findAnagrams("below", ["elbo", "biscuit"])).to.deep.equal([]);
+  });
+
 });
