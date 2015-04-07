@@ -13,7 +13,6 @@ function findAnagrams(input_word, input_array) {
 
 jQuery(document).ready(function() {
   $("#word").focus();
-
   $("#anagram").submit(function(event) {
 
     var word = $("#word").val();
@@ -30,9 +29,6 @@ jQuery(document).ready(function() {
       $("#result").show();
       $("#nomatches").hide();
     }
-
-
-
 
     event.preventDefault();
   });
