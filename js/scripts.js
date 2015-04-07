@@ -2,7 +2,8 @@ function findAnagrams(input_word, input_array) {
   var input_word_sorted = input_word.split("").sort().join("").toLowerCase();
   var matches = [];
   input_array.forEach(function(word) {
-    if (word.split("").sort().join("").toLowerCase().indexOf(input_word_sorted) !== -1) {
+    var word_sorted = word.split("").sort().join("").toLowerCase();
+    if (word_sorted.indexOf(input_word_sorted) !== -1) {
       matches.push(word);
     }
   });
