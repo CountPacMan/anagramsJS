@@ -1,9 +1,14 @@
 function findAnagrams(input_word, input_array) {
-  var input_word_sorted = input_word.split("").sort().join("").toLowerCase();
+  var input_word_sorted = input_word.toLowerCase().split("");
   var matches = [];
   input_array.forEach(function(word) {
-    var word_sorted = word.split("").sort().join("").toLowerCase();
-    if (word_sorted.indexOf(input_word_sorted) !== -1) {
+    var word_sorted = word.toLowerCase().split("");
+
+    var overlap_array = input_word_sorted.filter(function(element) {
+      return word_sorted.indexOf(element) != -1;
+    });
+
+    if (overlap_array.length === input_word.length) {
       matches.push(word);
     }
   });
